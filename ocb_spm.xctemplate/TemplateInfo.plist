@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>Kind</key>
+	<string>Xcode.IDEKit.TextSubstitutionFileTemplateKind</string>
+	<key>Platforms</key>
+	<array>
+		<string>com.apple.platform.iphoneos</string>
+	</array>
+	<key>Options</key>
+	<array>
+		<dict>
+			<key>Identifier</key>
+			<string>packageName</string>
+			<key>Required</key>
+			<true/>
+			<key>Name</key>
+			<string>Package name</string>
+			<key>Description</key>
+			<string>The name of SPM to create</string>
+			<key>Type</key>
+			<string>text</string>
+			<key>Default</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>Identifier</key>
+			<string>packageNameLowercase</string>
+			<key>Required</key>
+			<true/>
+			<key>Name</key>
+			<string>PackageName lowercase</string>
+			<key>Description</key>
+			<string>The name of SPM to create</string>
+			<key>Type</key>
+			<string>text</string>
+			<key>Default</key>
+			<string></string>
+		</dict>
+		<dict>
+			<key>Identifier</key>
+			<string>packageNameWithPrefix</string>
+			<key>Required</key>
+			<true/>
+			<key>Name</key>
+			<string>PackageName with Prefix</string>
+			<key>Description</key>
+			<string>The name of SPM to create</string>
+			<key>Type</key>
+			<string>text</string>
+			<key>Default</key>
+			<string>OCB</string>
+		</dict>
+	</array>
+	<key>SupportsSwiftPackage</key>
+	<true/>
+</dict>
+</plist>

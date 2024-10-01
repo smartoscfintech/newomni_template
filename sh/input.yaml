@@ -1,0 +1,70 @@
+openapi: 3.0.3
+info:
+  title: Payment Order Integration Service
+  description: API specifications for payment order integration
+  version: '1.0'
+servers:
+  - url: /api/payment-order-integration-service
+    description: Payment Order Integration Service Base URL
+paths:
+  /client-api/v1/foreign-exchange/exchange-rates/convertor:
+    post:
+      tags:
+        - foreign-exchange-client
+      description: Convert amount with exchange rates
+      operationId: convertExchangeRates
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/ForeignExchangeRateConvertorRequest'
+      responses:
+        200:
+          description: 200 OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/ForeignExchangeRateConvertorResponse'
+  /client-api/v1/foreign-exchange/currencies:
+    get:
+      tags:
+        - foreign-exchange-client
+      description: Retrieve currencies collection
+      summary: getCurrencies
+      operationId: getCurrencies
+      responses:
+        200:
+          description: 200 OK
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/GetCurrenciesResponse'
+
+components:
+  schemas:
+    GetCurrenciesResponse:
+      type: array
+      items:
+        $ref: '#/components/schemas/CurrencyDto'
+    CurrencyDto:
+      type: object
+      properties:
+        currencyCode:
+          type: string
+        currencyName:
+          type: string
+        iconUrl:
+          type: string
+    ForeignExchangeRateConvertorRequest:
+      type: object
+      properties:
+        targetCurrency:
+          type: string
+          pattern: "^[A-Z]{3}$"
+        originalAmount:
+          type: number
+    ForeignExchangeRateConvertorResponse:
+      type: object
+      properties:
+        exchangedAmount:
+          type: number
